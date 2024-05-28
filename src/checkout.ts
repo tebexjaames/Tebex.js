@@ -132,7 +132,7 @@ export default class Checkout {
      * Render the Tebex checkout panel immediately, into a specified HTML element.
      * If `popupOnMobile` is true, then on mobile devices the checkout will be immediately opened as a new page instead.
      */
-    render(element: HTMLElement, width: string, height: string, popupOnMobile = true) {
+    render(element: HTMLElement, width: number | string, height: number | string, popupOnMobile = true) {
         this.#buildComponent(width, height);
         this.#renderComponent(element, popupOnMobile && isMobile(width, height));
         this.emitter.emit("open");
@@ -147,7 +147,7 @@ export default class Checkout {
         this.emitter.emit("open");
     }
 
-    #buildComponent(width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT) {
+    #buildComponent(width: number | string = DEFAULT_WIDTH, height: number | string = DEFAULT_HEIGHT) {
         this.component = zoid.create({
             tag: "tebex-js-checkout-component",
             url: () => this.endpoint + "/" + this.ident,

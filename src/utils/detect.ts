@@ -1,3 +1,5 @@
+import { isNumber } from "./is";
+
 /**
  * @internal
  */
@@ -23,9 +25,12 @@ export const isApplePayAvailable = () =>
 /**
  * @internal
  */
-export const isMobile = (width: string, height: string) => {
+export const isMobile = (width: number | string, height: number | string) => {
     if (!isEnvBrowser())
         return false;
+
+    width = isNumber(width) ? width + 'px' : width;
+    height = isNumber(height) ? height + 'px' : height;
 
     const query = matchMedia(`(max-width: ${ width }) or (max-height: ${ height })`);
     return query.matches;
