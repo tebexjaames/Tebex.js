@@ -1,4 +1,4 @@
-import zoid from "zoid";
+import zoid from "@krakenjs/zoid";
 import { createNanoEvents } from "nanoevents";
 
 import { Lightbox } from "./lightbox";

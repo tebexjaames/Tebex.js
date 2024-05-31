@@ -1,4 +1,4 @@
-declare module "zoid" {
+declare module "@krakenjs/zoid" {
     export enum PROP_TYPE {
         STRING = "string",
         OBJECT = "object",
@@ -110,7 +110,7 @@ declare module "zoid" {
     export function destroyAll(): void;
 }
 
-declare module "zoid/dist/zoid.frame.js" {
+declare module "@krakenjs/zoid/dist/zoid.frame.js" {
     import {
         PopupOpenError,
         create,
@@ -122,7 +122,7 @@ declare module "zoid/dist/zoid.frame.js" {
         CONTEXT,
         EVENT,
         Zoid,
-    } from "zoid";
+    } from "@krakenjs/zoid";
 
     export {
         PopupOpenError,
